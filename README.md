@@ -47,15 +47,6 @@ A distributed AWS cluster of four ec2 machines is being used for this project. A
 Following metrics are computed via a MapReduce operation on the raw dataset (Spark):
 - Total car count in a month
 
-#Live Demo:
-A Live Demo of the project is available here: <a href= "http://trafficjam.today">trafficjam.today</a> or <a href= "http://trafficjam.online">trafficjam.online</a>. A snap shot of the map with highlighted roads:
-
-
-<img src="https://github.com/zachliu/Insight-TrafficJam/blob/master/images/realtime.png" alt="alt text" width="707" height="542">
-
-#Presentation
-The presentation slides are available here:
-<a href= "http://trafficjam.today/slideshare">trafficjam.today/slideshare</a>
 
 #Instructions to Run this Pipeline
 
