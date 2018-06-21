@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="container" style="width:70%; height:700px; margin: 0 auto;">
+</div>
+{% endblock %}
+{% block highcharts %}
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script src="//code.highcharts.com/modules/exporting.js"></script>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+$(function (k) {
+    var vol = [];
+    for (var i = 0; i < {{array}}.length; i = i + 1) {
+        vol.push([Date.UTC({{yyyy}}[i], {{mm}}[i]), {{array}}[i]]);
+    }
+    $('#container').highcharts({
+        chart: {
+            type: 'spline',
+            // Edit chart spacing
+            spacingBottom: 120,
+            spacingTop: 20,
+            spacingLeft: 40,
+            spacingRight: 40,
+
+            // Explicitly tell the width and height of a chart
+            width: null,
+            height: null
+
+        },
+        title: {
+            text: 'Monthly Total Volume',
+            style: {
+                fontSize:'28px'
+            },
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: www.dot.ny.gov',
+            style: {
+                fontSize:'18px'
+            },
+            x: -20
+        },
+        xAxis: {
+            type: 'datetime',
+            title: {
+                text: 'Date',
+                style: {
+                    fontSize:'18px'
+                }
+            },
+            labels: {
+                style: {
+                    //color: 'red',
+                    fontSize:'18px'
+                }
+            }
+
+        },
+        yAxis: {
+            title: {
+                text: 'Car Counts',
+                style: {
+                    fontSize:'18px'
+                }
+            },
+            labels: {
+                style: {
+                    //color: 'red',
+                    fontSize:'18px'
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'center',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [
+            {
+                name: '{{stname}}',
+                data: vol
+            }
+        ]
+    });
+});
+</script>
+{% endblock %}
