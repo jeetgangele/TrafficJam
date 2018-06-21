@@ -12,7 +12,7 @@
 
 
 #Introduction
-This is a data engineering project at Insight Data Science. There are two goals that this project aims to accomplish:
+This is a data engineering project. There are two goals that this project aims to accomplish:
 - Provide an API for drivers, city planners, and data scientists, for analyzing long term trends in traffic pattern w.r.t metrics such as average car volume, speed etc.
 - Enable a framework for real-time monitoring of traffic information, so that a user can know the best route to take and select a specific road to view the historical data.
 
@@ -22,7 +22,7 @@ The project is based on historical traffic volume data for nearly 60,000 major r
 
 roadID, timestamp, car count
 
-<img src="https://github.com/zachliu/Insight-TrafficJam/blob/master/images/rawdata.png" alt="alt text" width="408" height="216">
+<img src="https://github.com/zachliu/TrafficJam/blob/master/images/rawdata.png" alt="alt text" width="408" height="216">
 
 **Real-Time:**
 The historical dataset is played back to simulate real-time behavior.
@@ -60,7 +60,7 @@ Run the Kafka consumer:
 ```python kafka/kafka_consumer.py```
 
 Run Spark:
-```spark-submit --packages TargetHolding/pyspark-cassandra:0.1.5 ~/Insight-TrafficJam/spark/myBatch.py```
+```spark-submit --packages TargetHolding/pyspark-cassandra:0.1.5 ~/TrafficJam/spark/myBatch.py```
 
 
 Build storm topology:
